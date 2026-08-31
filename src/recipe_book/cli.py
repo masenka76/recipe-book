@@ -9,6 +9,10 @@ import argparse
 import sys
 from pathlib import Path
 
+from ._bootstrap import ensure_native_libs
+
+ensure_native_libs()  # может перезапустить процесс — держим до тяжёлых импортов
+
 from . import __version__
 from .parse import parse
 from .render import to_pdf
