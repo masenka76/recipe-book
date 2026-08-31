@@ -1,0 +1,28 @@
+[project]
+name = "recipe-book"
+version = "0.1.0"
+description = "Собирает рецепты по ссылке или тексту и делает из них красивый PDF"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "recipe-scrapers>=15.0.0",
+    "anthropic>=1.0.0",
+    "jinja2>=3.1.0",
+    "weasyprint>=63.0",
+    "httpx>=0.27.0",
+    "python-slugify>=8.0.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+recipe = "recipe_book.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/recipe_book"]

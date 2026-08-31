@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Секреты и локальная конфигурация
+.env
+*.key.json
+token.json
+client_secret*.json
+
+# Сгенерированные PDF (каноничные .md рецепты коммитим, PDF — нет)
+out/
+*.pdf
+
+# OS
+.DS_Store
