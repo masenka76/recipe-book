@@ -43,8 +43,10 @@
   </main>
 
   <footer>
-    {% if recipe.source_name or recipe.source_url %}
-    <p class="source">Источник: {{ recipe.source_name or recipe.source_url }}</p>
+    {% if recipe.source_url %}
+    <p class="source">Источник: <a href="{{ recipe.source_url }}">{{ recipe.source_url }}</a></p>
+    {% elif recipe.source_name %}
+    <p class="source">Источник: {{ recipe.source_name }}</p>
     {% endif %}
     <p class="added">В книгу добавлено: {{ recipe.date_added }}</p>
   </footer>
